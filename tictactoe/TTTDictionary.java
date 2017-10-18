@@ -4,8 +4,6 @@ package tictactoe;
  */
 import java.util.*;
 
-import javax.xml.soap.Node;
-
 public class TTTDictionary implements TTTDictionaryADT{
 	//hash table with separate chaining, . You will decide on the size of the table, keeping in mind that the size of the table
 	//must be a prime number. A table of size between 4000-5000, should work well.
@@ -83,7 +81,7 @@ public class TTTDictionary implements TTTDictionaryADT{
 				}
 				nodeCurr = nodeCurr.getNext();
 			}
-			if (nodeCurr.getElement().getConfiguration.equals(configString)) {
+			if (nodeCurr.getElement().getConfiguration().equals(configString)) {
 				throw new DuplicatedKeyException("This value is already in the dictionary!");
 			}
 			//insert the node behind the last node in the list
@@ -128,7 +126,7 @@ InexistentKeyException if the configuration is not in the dictionary
 				Node nodePrev = node;
 				//check the configuration of every node in the list
 				while (nodeCurr.getNext() != null) {
-					if (nodeCurr.getElement().getConfig().equals(config)) {
+					if (nodeCurr.getElement().getConfiguration().equals(config)) {
 						nodePrev.setNext(nodeCurr.getNext());
 					}
 				
@@ -156,13 +154,13 @@ or null if the configuration is not in the dictionary.
 			//check every element in the linkedlist to find matching configuration and score
 			while (nodeCurr.getNext() != null) {
 				if (nodeCurr.getElement().getConfiguration().equals(config)) {
-					return nodeCurr.data; //UHH how do i return the node's data?? 
+					return nodeCurr.getElement(); //UHH how do i return the node's data?? 
 				}
 				nodeCurr = nodeCurr.getNext();
 			}
 			//if there is only one node in the position
-			if (nodeCurr.getElement().getConfig().equals(config)) {
-				return nodeCurr.data; //UHHHH !?!?!?!
+			if (nodeCurr.getElement().getConfiguration().equals(config)) {
+				return nodeCurr.getElement(); //UHHHH !?!?!?!
 			}
 		}
 		return null;
