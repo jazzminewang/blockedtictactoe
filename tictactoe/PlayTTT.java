@@ -86,6 +86,12 @@ public class PlayTTT extends JFrame {
 	 * the game.
 	 */
 	public static void main(String[] args) {
+		args = new String[4];
+		args[0] = "5";
+		args[1] = "4";
+		args[2] = "4";
+		args[3] = "4";
+		
 		int size = 0, adjacent_to_win = 0, depth = 0;
 		int numBlocked;
 		int[] blocked;

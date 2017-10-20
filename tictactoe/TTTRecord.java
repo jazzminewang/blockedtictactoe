@@ -1,9 +1,17 @@
 package tictactoe;
 
+
+/*
+ * Jasmine Wang, 250896533
+ * October 20, 2017
+ * CS2210 Assignment 2
+ */
+
+
 public class TTTRecord {
-	static String config;
-	static int score;
-	static int level;
+	private String config;
+	private int score;
+	private int level;
 	
 	public TTTRecord(String config, int score, int level) {
 		 /*A constructor which returns
@@ -13,8 +21,6 @@ public class TTTRecord {
 			 this.config = config;
 			 this.score = score;
 			 this.level = level;
-		 
-		 //DO I NEED TO RETURN SHIT
 	}
 	 
 	 public String getConfiguration() {

@@ -1,41 +1,55 @@
 package tictactoe;
 
-public class Node {
-	private TTTRecord data;
+
+/* CompSci 2210 - Assignment 2
+ * Jasmine Wang
+ * 250896533
+ * Oct 19th, 2017
+ * 
+ * This class will help you create and manage the nodes in the
+ * dictionary class.
+ */
+
+public class Node{
+	
+	//Declare all instance variable as private to hide the info 
 	private Node next;
+	private TTTRecord record;
 	
-	/*
-	 * Constructor creates a node with a pointer containing an element
-	 * @param elem
-	 */
-	
-	public Node(TTTRecord data) {
-		this.data = data;
-		this.next = null;
+	//constructor with no parameters will create a null node
+	public Node (){
+		next = null;
+		record = null;
 	}
 	
-	/*
-	 * method that sets the pointer to the next node
-	 * @param node
-	 */
-	public void setNext(Node nextNode) {
-		next = nextNode;
-	}
+	//constructor will create a node with the record in it
+	public Node (TTTRecord record){
+		next = null;
+	    this.record = record;
+	  }
+	 
+	//this getter method will give you the next node
+	public Node getNext()
+	  {
+	    return next;
+	  }
 	
-	/*
-	 * method that returns the next node that is being pointed to
-	 * @return node that is being pointed to
-	 */
+	//this setter method will set the next node as the given record
+	public void setNext (Node nextRecord)
+	  {
+	    next = nextRecord;
+	  }
+	 
+	//this getter method will return the record in that node
+	public TTTRecord getElement()
+	  {
+	    return record;
+	  }
 	
-	public Node getNext() {
-		return this.next;
-	}
-	
-	/*
-	 * method that returns the element stored within the node
-	 * @return element
-	 */
-	public TTTRecord getElement() {
-		return this.data;
-	}	
+	//this setter method will set the current node as the given record
+	public void setRecord (TTTRecord newRecord)
+	  {
+	    record = newRecord;
+	  }
 }
+	
